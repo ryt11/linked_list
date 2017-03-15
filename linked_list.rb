@@ -7,7 +7,7 @@ class LinkedList
     @nodes = []
   end
   def push(val)
-    nodes.empty? ? nodes << Node.new(val, nil) : nodes[nodes.count] = Node.new(val, nil)
+    nodes[nodes.count] = Node.new(val, nil)
     nodes[nodes.count-2].next_node = nodes[nodes.count-1]
   end
 end
