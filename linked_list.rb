@@ -18,9 +18,16 @@ class LinkedList
     (index - 1).times do
       current = current.next_node
     end
-    inserted_node = Node.new(value, nil)
-    inserted_node.next_node = current.next_node
-    current.next_node = inserted_node
+    if current == last #handles if some person decided they wanted to insert at the end of the list instead of just use push need to make last that new inserted node
+      inserted_node = Node.new(value, nil)
+      inserted_node.next_node = current.next_node
+      current.next_node = inserted_node
+      @last = inserted_node
+    else
+      inserted_node = Node.new(value, nil)
+      inserted_node.next_node = current.next_node
+      current.next_node = inserted_node
+    end
   end
 
   def show_all_values
@@ -64,6 +71,7 @@ ll.push("He34o")
 ll.push("He12")
 ll.show_all_values
 ll.delete("Hesa")
-ll.insert(3, "insertedyo")
+ll.insert(6, "insertedyo")
 ll.show_all_values
+binding.pry
 ''
