@@ -8,7 +8,7 @@ class LinkedList
     @last = root
   end
 
-  def push(val)
+  def <<(val)
     last.next_node = Node.new(val, nil)
     @last = @last.next_node
   end
@@ -18,7 +18,7 @@ class LinkedList
     (index - 1).times do
       current = current.next_node
     end
-    if current == last #handles if some person decided they wanted to insert at the end of the list instead of just use push need to make last that new inserted node
+    if current == last #handles if some person decided they wanted to insert at the end of the list instead of just use << need to make last that new inserted node
       inserted_node = Node.new(value, nil)
       inserted_node.next_node = current.next_node
       current.next_node = inserted_node
@@ -62,12 +62,12 @@ end
 
 ll = LinkedList.new("sup")
 
-ll.push("Hello")
-ll.push("Herp")
-ll.push("Hedf")
-ll.push("Hesa")
-ll.push("He34o")
-ll.push("He12")
+ll.<<("Hello")
+ll.<<("Herp")
+ll.<<("Hedf")
+ll.<<("Hesa")
+ll.<<("He34o")
+ll.<<("He12")
 ll.show_all_values
 ll.delete("Hesa")
 ll.insert(6, "insertedyo")
