@@ -32,8 +32,6 @@ class LinkedList
 
   def show_all_values
     current, node_position = root, 0
-    # current = root
-    # node_position = 0
     while true
       puts "The node at position #{node_position} has a value of #{current.val}"
       break if current.next_node == nil
