@@ -34,7 +34,7 @@ class LinkedList
     current, node_position = root, 0
     while true
       puts "The node at position #{node_position} has a value of #{current.val}"
-      break if current.next_node == nil
+      break if current.next_node.nil?
       current = current.next_node
       node_position += 1
     end
